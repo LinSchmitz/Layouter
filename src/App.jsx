@@ -5,14 +5,13 @@ import Header from './components/Header';
 import SettingsPanel from './components/SettingsPanel';
 import PreviewArea from './components/PreviewArea';
 import CSSOutput from './components/CSSOutput';
-import Footer from './components/Footer';
 import About from './components/About';
 import LayoutModeToggle from './components/LayoutModeToggle';
 
 export default function App() {
-  // فقط یک حالت برای layoutMode داریم
   const [layoutMode, setLayoutMode] = useState('flex');
   const [darkMode, setDarkMode] = useState(false);
+  const [show, setShow] = useState(false);
 
   const [settings, setSettings] = useState({
     flexDirection: 'row',
@@ -37,6 +36,8 @@ export default function App() {
     <BrowserRouter>
       <div className="app-container">
         <Header
+          show={show}
+          setShow={setShow}
           layoutMode={layoutMode}
           setLayoutMode={setLayoutMode}
           darkMode={darkMode}
@@ -60,12 +61,11 @@ export default function App() {
                   <PreviewArea layoutMode={layoutMode} settings={settings} />
                 </div>
                 <CSSOutput layoutMode={layoutMode} settings={settings} />
-                <Footer />
               </>
             }
           />
 
-          <Route path="/about" element={<About />} />
+          {show && <Route path="/about" element={<About />} />}
         </Routes>
       </div>
     </BrowserRouter>

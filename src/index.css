@@ -181,14 +181,27 @@ nav {
 }
 
 /* Footer */
-footer.footer {
+footer {
   background: var(--color-secondary);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
   display: flex;
-  justify-content: flex-end;
-  gap: var(--spacing-sm);
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.icons {
+  transition: transform 0.3s ease-in-out;
+}
+
+.icons:hover {
+  transform: rotate(360deg) scale(1.2);
+  fill: var(--blue-catchy);
+}
+
+.copyright {
+  font-size: 1rem;
 }
 
 /* Buttons (Unified Design) */

@@ -14,7 +14,7 @@ export default function Header({
   return (
     <nav className="nav-bar">
       <Link to="/" className="logo">
-        Layouter
+        🔲Layouter
       </Link>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <LayoutModeToggle

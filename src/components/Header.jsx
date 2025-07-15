@@ -1,21 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LayoutModeToggle from './LayoutModeToggle';
+import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ layoutMode, setLayoutMode }) {
   return (
     <nav className="nav-bar">
-      {/* Logo that redirects to "/" */}
       <Link to="/" className="logo">
         Layouter
       </Link>
-
-      <LayoutModeToggle />
-
-      {/* Link to About page */}
-      <Link to="/about" className="nav-link">
-        About
-      </Link>
+      <LayoutModeToggle layoutMode={layoutMode} setLayoutMode={setLayoutMode} />
+      <Link to="/about">About</Link>
     </nav>
   );
 }

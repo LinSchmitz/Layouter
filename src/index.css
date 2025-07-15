@@ -81,6 +81,30 @@ nav {
   color: var(--color-primary);
 }
 
+/*************/
+.layout-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.layout-toggle button {
+  padding: 6px 16px;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.layout-toggle button.active {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  box-shadow: var(--box-shadow);
+}
+
 /* Main Body */
 .main-body {
   display: flex;
@@ -176,10 +200,16 @@ button {
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  margin-right: 1rem;
 }
 
 button:hover {
   background-color: #4338ca;
+}
+
+button.active {
+  background-color: #4338ca;
+  box-shadow: none;
 }
 
 /* Responsive */

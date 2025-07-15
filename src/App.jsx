@@ -4,10 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import SettingsPanel from './components/SettingsPanel';
 import PreviewArea from './components/PreviewArea';
-import CSSOutput from './components/CSSOutput';
 import About from './components/About';
-import LayoutModeToggle from './components/LayoutModeToggle';
-
+import CssOutput from './components/CSSOutput';
 export default function App() {
   const [layoutMode, setLayoutMode] = useState('flex');
   const [darkMode, setDarkMode] = useState(false);
@@ -53,17 +51,20 @@ export default function App() {
             path="/"
             element={
               <>
-                <div className="main-body">
-                  {' '}
-                  <PreviewArea layoutMode={layoutMode} settings={settings} />
-                  <SettingsPanel
-                    mode={layoutMode}
-                    settings={settings}
-                    updateSettings={updateSettings}
-                  />
-                  {/* <LayoutModeToggle mode={layoutMode} setMode={setLayoutMode} /> */}
-                </div>
-                <CSSOutput layoutMode={layoutMode} settings={settings} />
+                <>
+                  <div className="main-body">
+                    <PreviewArea layoutMode={layoutMode} settings={settings} />
+                    <SettingsPanel
+                      mode={layoutMode}
+                      settings={settings}
+                      updateSettings={updateSettings}
+                    />
+                  </div>
+
+                  <div className="output-area">
+                    <CssOutput layoutMode={layoutMode} settings={settings} />
+                  </div>
+                </>
               </>
             }
           />

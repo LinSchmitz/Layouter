@@ -116,11 +116,12 @@ nav {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
+  margin-bottom: 20px;
 }
 
 /* Settings Panel */
 .settings-panel {
-  flex: 0 0 25%;
+  flex: 1 1 25%;
   max-width: 25%;
   box-shadow: var(--box-shadow-inset);
   background: var(--color-secondary);
@@ -192,7 +193,7 @@ nav {
 
 /* Preview Area */
 .preview-area {
-  flex: 0 0 70%;
+  flex: 1 1 70%;
   max-width: 70%;
   background: var(--color-secondary);
   border-radius: var(--border-radius);
@@ -204,6 +205,13 @@ nav {
   justify-content: center;
   align-items: center;
   min-height: 300px; /* optional: gives visual balance if it's empty */
+}
+
+/* Output area full width below main-body */
+.output-area {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Box Items */
@@ -226,36 +234,6 @@ nav {
 .box-item:hover {
   box-shadow: 4px 4px 10px var(--shadow-dark),
     -4px -4px 10px var(--shadow-light);
-}
-
-/* CSS Output */
-.css-output {
-  background: var(--color-secondary);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  padding: var(--spacing-md);
-  font-family: 'Courier New', Courier, monospace;
-  white-space: pre-wrap;
-  max-height: 250px;
-  overflow-y: auto;
-  margin-top: var(--spacing-lg);
-  color: var(--color-text-primary);
-  user-select: all;
-}
-
-/*       */
-.css-output-container button {
-  padding: 6px 12px;
-  border-radius: 8px;
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.css-output-container button:hover {
-  background-color: #3730a3; /* dark indigo */
 }
 
 /* Footer */

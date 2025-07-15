@@ -1,15 +1,37 @@
 import React, { useState, useEffect } from 'react';
 
 export default function GridSettings({ settings, updateSettings }) {
-  const [columns, setColumns] = useState(3);
-  const [rows, setRows] = useState(2);
+  const [columns, setColumns] = useState(() => {
+    const match = settings.gridTemplateColumns?.match(/\d+/);
+    return match ? Number(match[0]) : 3;
+  });
+
+  const [rows, setRows] = useState(() => {
+    const match = settings.gridTemplateRows?.match(/\d+/);
+    return match ? Number(match[0]) : 2;
+  });
 
   useEffect(() => {
-    updateSettings({
-      gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      gridTemplateRows: `repeat(${rows}, 1fr)`,
-    });
-  }, [columns, rows, updateSettings]);
+    const newGridTemplateColumns = `repeat(${columns}, 1fr)`;
+    const newGridTemplateRows = `repeat(${rows}, 1fr)`;
+
+    // Only update if values changed to avoid infinite loops
+    if (
+      settings.gridTemplateColumns !== newGridTemplateColumns ||
+      settings.gridTemplateRows !== newGridTemplateRows
+    ) {
+      updateSettings({
+        gridTemplateColumns: newGridTemplateColumns,
+        gridTemplateRows: newGridTemplateRows,
+      });
+    }
+  }, [
+    columns,
+    rows,
+    updateSettings,
+    settings.gridTemplateColumns,
+    settings.gridTemplateRows,
+  ]);
 
   return (
     <div className="grid-settings space-y-4">

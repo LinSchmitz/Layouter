@@ -1,63 +1,56 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import SettingsPanel from './components/SettingsPanel';
 import PreviewArea from './components/PreviewArea';
 import CSSOutput from './components/CSSOutput';
 import Footer from './components/Footer';
+import About from './components/About';
 
 export default function App() {
-  // Selected layout mode: 'flex' or 'grid'
   const [layoutMode, setLayoutMode] = useState('flex');
 
-  // General settings (you can extend this later)
   const [settings, setSettings] = useState({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
-    // For Grid, you can add settings here like columns, rows, etc.
   });
 
-  // Update settings from SettingsPanel
   function updateSettings(newSettings) {
     setSettings(prev => ({ ...prev, ...newSettings }));
   }
 
   return (
-    <div className="app-container">
-      {/* Header containing logo and Flex/Grid toggle */}
-      <Header layoutMode={layoutMode} setLayoutMode={setLayoutMode} />
+    <BrowserRouter>
+      <div className="app-container">
+        <Header layoutMode={layoutMode} setLayoutMode={setLayoutMode} />
 
-      <div className="main-body">
-        {/* Settings panel (changes depending on Flex or Grid mode) */}
-        <SettingsPanel
-          layoutMode={layoutMode}
-          settings={settings}
-          updateSettings={updateSettings}
-        />
+        <Routes>
+          {/* Main Layout Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="main-body">
+                  <SettingsPanel
+                    layoutMode={layoutMode}
+                    settings={settings}
+                    updateSettings={updateSettings}
+                  />
+                  <PreviewArea layoutMode={layoutMode} settings={settings} />
+                </div>
+                <CSSOutput layoutMode={layoutMode} settings={settings} />
+                <Footer />
+              </>
+            }
+          />
 
-        {/* Visual layout preview */}
-        <PreviewArea layoutMode={layoutMode} settings={settings} />
+          {/* About Page */}
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
-
-      {/* Generated CSS code display */}
-      <CSSOutput layoutMode={layoutMode} settings={settings} />
-
-      {/* Footer with buttons */}
-      <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
-
-// export default function App() {
-//   return (
-//     <div>
-//       <h2>Layouter</h2>
-//       <Header />
-//       <p>Sidebar </p>
-//       <p>Preview Area</p>
-//       <p>Code box</p>
-//     </div>
-//   );
-// }

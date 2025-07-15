@@ -2,7 +2,9 @@
 
 **Layouter** is a visual playground for Flexbox and CSS Grid. Instantly create, experiment, and preview modern layouts without writing a single line of code.
 
-![Screenshot](./screenshot.png)
+- 📷 [Screenshot](./screenshot.png)
+
+- 🌐 [Live Demo](https://yourusername.github.io/layouter)
 
 ---
 
@@ -52,25 +54,7 @@ layouter/
 └── package.json
 ```
 
----
 
-## 📜 License
-
-MIT License © \[Your Name]
-
----
-
-## 🔗 Links
-
-- 🌐 [Live Demo](https://yourusername.github.io/layouter) _(if deployed)_
-- 🐛 [Issues](https://github.com/yourusername/layouter/issues)
-- 🙌 [Contribute](CONTRIBUTING.md) _(optional)_
-
----
-
-> Built with love for developers who design. 💡
-
-```
 
 ---
 

@@ -7,8 +7,10 @@ import PreviewArea from './components/PreviewArea';
 import CSSOutput from './components/CSSOutput';
 import Footer from './components/Footer';
 import About from './components/About';
+import LayoutModeToggle from './components/LayoutModeToggle';
 
 export default function App() {
+  // فقط یک حالت برای layoutMode داریم
   const [layoutMode, setLayoutMode] = useState('flex');
   const [darkMode, setDarkMode] = useState(false);
 
@@ -49,10 +51,12 @@ export default function App() {
               <>
                 <div className="main-body">
                   <SettingsPanel
-                    layoutMode={layoutMode}
-                    settings={settings}
+                    mode={layoutMode}
                     updateSettings={updateSettings}
                   />
+
+                  <LayoutModeToggle mode={layoutMode} setMode={setLayoutMode} />
+
                   <PreviewArea layoutMode={layoutMode} settings={settings} />
                 </div>
                 <CSSOutput layoutMode={layoutMode} settings={settings} />
@@ -61,7 +65,6 @@ export default function App() {
             }
           />
 
-          {/* About Page */}
           <Route path="/about" element={<About />} />
         </Routes>
       </div>

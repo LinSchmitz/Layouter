@@ -177,7 +177,7 @@ nav {
   padding: var(--spacing-md);
   font-family: 'Courier New', Courier, monospace;
   white-space: pre-wrap;
-  max-height: 150px;
+  max-height: 250px;
   overflow-y: auto;
   margin-top: var(--spacing-lg);
   color: var(--color-text-primary);

@@ -8,16 +8,16 @@ body.dark .app-container {
   background-color: #1f2937;
 }
 
-body.dark nav,
+body.dark .app-container,
 body.dark .main-body,
 body.dark .settings-panel,
 body.dark .preview-area,
 body.dark .css-output,
+body.dark nav,
 body.dark footer {
-  background-color: #374151;
+  background-color: #111827;
   color: #f3f4f6;
   box-shadow: none;
-  border-color: #4b5563;
 }
 
 body.dark .logo,

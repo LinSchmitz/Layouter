@@ -1,7 +1,23 @@
 import React from 'react';
 
-function CSSOutput() {
-  return <div></div>;
-}
+export default function CSSOutput({ layoutMode, settings }) {
+  const output =
+    layoutMode === 'flex'
+      ? `
+.preview-area {
+  display: flex;
+  flex-direction: ${settings.flexDirection};
+  justify-content: ${settings.justifyContent};
+  align-items: ${settings.alignItems};
+  gap: ${settings.gap}px;
+}`
+      : `
+.preview-area {
+  display: grid;
+  grid-template-columns: ${settings.gridTemplateColumns || 'none'};
+  grid-template-rows: ${settings.gridTemplateRows || 'none'};
+  gap: ${settings.gap}px;
+}`;
 
-export default CSSOutput;
+  return <pre className="css-output">{output}</pre>;
+}

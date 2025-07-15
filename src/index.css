@@ -8,6 +8,7 @@
 
   /* Font */
   --font-family-base: 'Sono', sans-serif, Tahoma, Geneva, Verdana;
+
   /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -27,7 +28,7 @@
     inset -6px -6px 10px var(--shadow-light);
 }
 
-/* === Reset & Base === */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -45,7 +46,16 @@ body {
   padding: var(--spacing-lg);
 }
 
-/* === Layout === */
+/* App container */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Header */
 nav.nav-bar {
   background: var(--color-secondary);
   box-shadow: var(--box-shadow);
@@ -54,7 +64,6 @@ nav.nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: var(--spacing-lg);
 }
 
 .logo {
@@ -66,7 +75,91 @@ nav.nav-bar {
   color: var(--color-primary);
 }
 
-/* Button styles */
+/* Main Body */
+.main-body {
+  display: flex;
+  gap: var(--spacing-lg);
+  background: var(--color-secondary);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+}
+
+/* Settings Panel */
+.settings-panel {
+  flex: 1;
+  box-shadow: var(--box-shadow-inset);
+  background: var(--color-secondary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Preview Area */
+.preview-area {
+  flex: 2;
+  background: var(--color-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-inset);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Box Items inside Preview */
+.box-item {
+  width: 80px;
+  height: 80px;
+  background: var(--color-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 700;
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.box-item:hover {
+  box-shadow: 4px 4px 10px var(--shadow-dark),
+    -4px -4px 10px var(--shadow-light);
+}
+
+/* CSS Output panel */
+.css-output {
+  background: var(--color-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-md);
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: var(--spacing-lg);
+  color: var(--color-text-primary);
+  user-select: all;
+}
+
+/* Footer */
+footer.footer {
+  background: var(--color-secondary);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+/* Buttons */
 button {
   background-color: var(--color-primary);
   color: white;
@@ -83,9 +176,15 @@ button:hover {
   background-color: #4338ca;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .main.card {
+/* Responsive */
+@media (max-width: 900px) {
+  .main-body {
     flex-direction: column;
+  }
+
+  .settings-panel,
+  .preview-area {
+    flex: unset;
+    width: 100%;
   }
 }

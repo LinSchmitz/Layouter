@@ -1,7 +1,7 @@
 import React from 'react';
-import LayoutModeToggle from './components/LayoutModeToggle';
+import LayoutModeToggle from './LayoutModeToggle';
 
-export function Header() {
+export default function Header() {
   return (
     <nav>
       <p>Logo</p>

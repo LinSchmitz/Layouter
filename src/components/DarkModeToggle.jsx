@@ -1,4 +1,5 @@
 import React from 'react';
+import './DarkModeToggle.css';
 
 export default function DarkModeToggle({ darkMode, toggleDarkMode }) {
   return (

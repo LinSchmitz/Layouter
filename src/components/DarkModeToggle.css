@@ -1,0 +1,121 @@
+/* DarkModeToggle.css */
+
+/* DARK MODE OVERRIDES */
+body.dark {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+body.dark .app-container {
+  background-color: #1f2937;
+}
+
+body.dark nav,
+body.dark .main-body,
+body.dark .settings-panel,
+body.dark .preview-area,
+body.dark .css-output,
+body.dark footer.footer {
+  background-color: #374151;
+  color: #f3f4f6;
+  box-shadow: none;
+  border-color: #4b5563;
+}
+
+body.dark .logo,
+body.dark .nav-link {
+  color: #60a5fa;
+}
+
+body.dark .layout-toggle button {
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+body.dark .layout-toggle button.active {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+  color: #1e1e1e;
+}
+
+body.dark .box-item {
+  background-color: #4b5563;
+  color: #60a5fa;
+  box-shadow: none;
+}
+
+body.dark .box-item:hover {
+  box-shadow: inset 0 0 5px #000;
+}
+
+body.dark button {
+  background-color: #60a5fa;
+  color: #1e1e1e;
+}
+
+body.dark button:hover {
+  background-color: #3b82f6;
+}
+
+.dark-toggle-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.dark-toggle-input {
+  display: none;
+}
+
+.dark-toggle-label {
+  position: relative;
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: 1px 1px 0px 1px #eab92d;
+  border: 2px solid #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.dark-toggle-input:checked + .dark-toggle-label {
+  box-shadow: 1px 1px 0px 1px #075985;
+  border-color: #1f2937;
+}
+
+.dark-toggle-label:hover {
+  box-shadow: 1px 1px 0px 1px #1e1e1e;
+}
+
+.dark-toggle-icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transition: opacity 0.3s ease;
+}
+
+.dark-toggle-icon.sun {
+  stroke: #facc15;
+  opacity: 1;
+}
+
+.dark-toggle-input:checked ~ .dark-toggle-icon.sun {
+  opacity: 0;
+}
+
+.dark-toggle-icon.moon {
+  stroke: #075985;
+  opacity: 0;
+}
+
+.dark-toggle-input:checked ~ .dark-toggle-icon.moon {
+  opacity: 1;
+}

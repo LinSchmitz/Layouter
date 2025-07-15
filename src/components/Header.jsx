@@ -27,9 +27,10 @@ export default function Header({
           className="nav-link tooltip"
           onClick={() => setShow(show => !show)}
         >
-          {show ? '-' : '?'}
-
+          <span className={`rotate-question ${show ? 'rotated' : ''}`}>?</span>
           <span className="tooltip-text">About this app</span>
+          {/* {show ? '¿' : '?'}
+          <span className="tooltip-text">About this app</span> */}
         </Link>
 
         <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />

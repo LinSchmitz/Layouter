@@ -298,6 +298,17 @@ button.active {
   opacity: 1;
 }
 
+/* Animation for rotating the question mark */
+.rotate-question {
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 0.6s cubic-bezier(0.6, 0.05, 0.28, 0.91); /* نرم‌تر */
+}
+
+.rotate-question.rotated {
+  transform: rotate(-180deg);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .main-body {

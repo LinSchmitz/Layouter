@@ -43,15 +43,32 @@ npm run dev
 
 ## 📂 Folder Structure
 
+
 ```
-layouter/
-├── public/
-├── src/
-│   ├── components/
-│   ├── hooks/
-│   ├── styles/
-│   └── App.jsx
-└── package.json
+📁 src/
+│
+├── App.jsx                      # Main root component of the application
+│
+├── components/                 # Reusable UI components
+│   ├── Header.jsx              # Top bar with logo and layout type toggle
+│   ├── LayoutModeToggle.jsx   # Toggle buttons for switching Flex/Grid mode
+│   ├── SettingsPanel.jsx      # Main settings panel for layout options
+│   ├── FlexSettings.jsx       # Flex-specific settings (direction, justify, etc.)
+│   ├── GridSettings.jsx       # Grid-specific settings (columns, rows, etc.)
+│   ├── PreviewArea.jsx        # Live visual layout preview (canvas)
+│   ├── BoxItem.jsx            # Individual visual box element inside preview
+│   ├── CSSOutput.jsx          # Display generated CSS code
+│   └── Footer.jsx             # Footer with buttons (e.g., Copy / Download CSS)
+│
+├── hooks/
+│   └── useLayoutSettings.js   # (Optional) Custom hook for managing layout settings state
+│
+├── styles/
+│   └── index.css or tailwind.css # Main styling file (custom or using Tailwind)
+│
+└── utils/
+    └── generateCSS.js         # Utility function that creates CSS code from settings
+
 ```
 ---
 

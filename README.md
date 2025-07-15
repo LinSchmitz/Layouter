@@ -55,25 +55,27 @@ layouter/
 ```
 ---
 
- ```
- 🟥 Top Bar (Header)
-└── Project Name: Layouter
-└── Layout Type Toggle: [Flexbox] [Grid]
+## 🧩 UI Layout Overview
+
+```
+🟥 Top Bar (Header)
+   └── Project Name: Layouter
+   └── Layout Type Toggle: [Flexbox] [Grid]
 
 🟦 Main Body
-├── Sidebar (Tools)
-│ └── Settings:
-│ - Direction (row, column)
-│ - Alignment (justify, align)
-│ - Gap, item count, etc.
-│
-└── Layout Preview (Canvas)
-└── Live layout visualization
+   ├── Sidebar (Tools)
+   │    └── Settings:
+   │        - Direction (row, column)
+   │        - Alignment (justify, align)
+   │        - Gap, item count, etc.
+   │
+   └── Layout Preview (Canvas)
+        └── Live layout visualization
 
 🟩 Footer
-└── Copy/Download CSS
-└── Link to documentation
- ```
+   └── Copy/Download CSS
+   └── Link to documentation
+```
 
 ```
 ┌───────────────────────────────────────────────┐

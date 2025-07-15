@@ -19,10 +19,10 @@ export default function Header({
           layoutMode={layoutMode}
           setLayoutMode={setLayoutMode}
         />
-        <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Link to="/about" className="nav-link">
           About
         </Link>
+        <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
     </nav>
   );

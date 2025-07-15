@@ -46,59 +46,6 @@ body {
   padding: var(--spacing-lg);
 }
 
-/* ====== DARK MODE OVERRIDES ====== */
-
-body.dark .app-container {
-  background-color: #1f2937;
-}
-
-body.dark nav,
-body.dark .main-body,
-body.dark .settings-panel,
-body.dark .preview-area,
-body.dark .css-output,
-body.dark footer.footer {
-  background-color: #374151; /* Tailwind gray-700 */
-  color: #f3f4f6; /* text-gray-100 */
-  box-shadow: none;
-  border-color: #4b5563; /* gray-600 */
-}
-
-body.dark .logo,
-body.dark .nav-link {
-  color: #60a5fa; /* light blue */
-}
-
-body.dark .layout-toggle button {
-  border-color: #4b5563;
-  color: #f3f4f6;
-}
-
-body.dark .layout-toggle button.active {
-  background-color: #60a5fa;
-  border-color: #60a5fa;
-  color: #1e1e1e;
-}
-
-body.dark .box-item {
-  background-color: #4b5563;
-  color: #60a5fa;
-  box-shadow: none;
-}
-
-body.dark .box-item:hover {
-  box-shadow: inset 0 0 5px #000;
-}
-
-body.dark button {
-  background-color: #60a5fa;
-  color: #1e1e1e;
-}
-
-body.dark button:hover {
-  background-color: #3b82f6;
-}
-
 /* App container */
 .app-container {
   max-width: 1200px;
@@ -134,7 +81,7 @@ nav {
   color: var(--color-primary);
 }
 
-/*************/
+/* Layout Toggle Buttons */
 .layout-toggle {
   display: flex;
   gap: 8px;
@@ -194,7 +141,7 @@ nav {
   align-items: center;
 }
 
-/* Box Items inside Preview */
+/* Box Items */
 .box-item {
   width: 80px;
   height: 80px;
@@ -216,7 +163,7 @@ nav {
     -4px -4px 10px var(--shadow-light);
 }
 
-/* CSS Output panel */
+/* CSS Output */
 .css-output {
   background: var(--color-secondary);
   border-radius: var(--border-radius);
@@ -242,31 +189,32 @@ footer.footer {
   gap: var(--spacing-sm);
 }
 
-/* Buttons */
+/* Buttons (Unified Design) */
 button {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: transparent;
+  color: var(--color-primary);
   border-radius: var(--border-radius);
   padding: var(--spacing-sm) var(--spacing-md);
-  box-shadow: var(--box-shadow);
-  border: none;
+  border: 2px solid var(--color-border);
+  box-shadow: 1px 1px 0px 1px #eab92d;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease;
-  margin-right: 1rem;
+  transition: all 0.3s ease;
+  font-family: var(--font-family-base);
 }
 
 button:hover {
-  background-color: #4338ca;
+  box-shadow: 1px 1px 0px 1px #1e1e1e;
 }
 
 button.active {
-  background-color: #4338ca;
-  box-shadow: none;
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 1px 1px 0px 1px #075985;
+  border-color: #075985;
 }
 
-/********* Dark Mode *******/
-
+/* Dark Mode Toggle */
 .dark-toggle-wrapper {
   position: relative;
   display: flex;
@@ -286,10 +234,10 @@ button.active {
   z-index: 10;
   width: 56px;
   height: 56px;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   background: transparent;
   box-shadow: 1px 1px 0px 1px #eab92d;
-  border: 2px solid #1f2937; /* gray-800 */
+  border: 2px solid #1f2937;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,7 +253,6 @@ button.active {
   box-shadow: 1px 1px 0px 1px #1e1e1e;
 }
 
-/* SVG Icons */
 .dark-toggle-icon {
   position: absolute;
   width: 48px;
@@ -314,7 +261,7 @@ button.active {
 }
 
 .dark-toggle-icon.sun {
-  stroke: #facc15; /* yellow-500 */
+  stroke: #facc15;
   opacity: 1;
 }
 
@@ -323,12 +270,69 @@ button.active {
 }
 
 .dark-toggle-icon.moon {
-  stroke: #075985; /* sky-800 */
+  stroke: #075985;
   opacity: 0;
 }
 
 .dark-toggle-input:checked ~ .dark-toggle-icon.moon {
   opacity: 1;
+}
+
+/* DARK MODE OVERRIDES */
+body.dark {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+body.dark .app-container {
+  background-color: #1f2937;
+}
+
+body.dark nav,
+body.dark .main-body,
+body.dark .settings-panel,
+body.dark .preview-area,
+body.dark .css-output,
+body.dark footer.footer {
+  background-color: #374151;
+  color: #f3f4f6;
+  box-shadow: none;
+  border-color: #4b5563;
+}
+
+body.dark .logo,
+body.dark .nav-link {
+  color: #60a5fa;
+}
+
+body.dark .layout-toggle button {
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+body.dark .layout-toggle button.active {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+  color: #1e1e1e;
+}
+
+body.dark .box-item {
+  background-color: #4b5563;
+  color: #60a5fa;
+  box-shadow: none;
+}
+
+body.dark .box-item:hover {
+  box-shadow: inset 0 0 5px #000;
+}
+
+body.dark button {
+  background-color: #60a5fa;
+  color: #1e1e1e;
+}
+
+body.dark button:hover {
+  background-color: #3b82f6;
 }
 
 /* Responsive */

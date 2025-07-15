@@ -17,11 +17,23 @@ export default function PreviewArea({ layoutMode, settings }) {
           gap: `${settings.gap}px`,
         };
 
+  // 🔍 Extract number from repeat(x, 1fr)
+  const getCountFromRepeat = value => {
+    const match = value?.match(/repeat\((\d+),/);
+    return match ? parseInt(match[1]) : 1;
+  };
+
+  const columns = getCountFromRepeat(settings.gridTemplateColumns);
+  const rows = getCountFromRepeat(settings.gridTemplateRows);
+  const totalBoxes = layoutMode === 'grid' ? columns * rows : 6;
+
   return (
     <div className="preview-area" style={containerStyles}>
-      <div className="box-item">1</div>
-      <div className="box-item">2</div>
-      <div className="box-item">3</div>
+      {Array.from({ length: totalBoxes }).map((_, i) => (
+        <div key={i} className="box-item">
+          {i + 1}
+        </div>
+      ))}
     </div>
   );
 }

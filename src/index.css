@@ -129,6 +129,35 @@ nav {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+  font-size: 1.1rem;
+}
+
+.flex-settings label {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.flex-settings select,
+.flex-settings input {
+  width: 100%;
+  padding: var(--spacing-sm);
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-secondary);
+  color: var(--color-text-primary);
+  box-shadow: var(--box-shadow-inset);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flex-settings select:focus,
+.flex-settings input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
 }
 
 /* Preview Area */

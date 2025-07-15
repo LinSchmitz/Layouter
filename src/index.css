@@ -212,6 +212,77 @@ button.active {
   box-shadow: none;
 }
 
+/********* Dark Mode *******/
+
+body.dark {
+  background-color: #1f2937; /* dark bg */
+  color: #f3f4f6; /* light text */
+}
+
+.dark-toggle-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+}
+
+.dark-toggle-input {
+  display: none;
+}
+
+.dark-toggle-label {
+  position: relative;
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: 1px 1px 0px 1px #eab92d;
+  border: 2px solid #1f2937; /* gray-800 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.dark-toggle-input:checked + .dark-toggle-label {
+  box-shadow: 1px 1px 0px 1px #075985;
+  border-color: #1f2937;
+}
+
+.dark-toggle-label:hover {
+  box-shadow: 1px 1px 0px 1px #1e1e1e;
+}
+
+/* SVG Icons */
+.dark-toggle-icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transition: opacity 0.3s ease;
+}
+
+.dark-toggle-icon.sun {
+  stroke: #facc15; /* yellow-500 */
+  opacity: 1;
+}
+
+.dark-toggle-input:checked ~ .dark-toggle-icon.sun {
+  opacity: 0;
+}
+
+.dark-toggle-icon.moon {
+  stroke: #075985; /* sky-800 */
+  opacity: 0;
+}
+
+.dark-toggle-input:checked ~ .dark-toggle-icon.moon {
+  opacity: 1;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .main-body {

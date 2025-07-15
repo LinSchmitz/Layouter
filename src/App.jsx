@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -10,6 +10,7 @@ import About from './components/About';
 
 export default function App() {
   const [layoutMode, setLayoutMode] = useState('flex');
+  const [darkMode, setDarkMode] = useState(false);
 
   const [settings, setSettings] = useState({
     flexDirection: 'row',
@@ -18,6 +19,14 @@ export default function App() {
     gap: 10,
   });
 
+  useEffect(() => {
+    document.body.classList.toggle('dark', darkMode);
+  }, [darkMode]);
+
+  function toggleDarkMode() {
+    setDarkMode(prev => !prev);
+  }
+
   function updateSettings(newSettings) {
     setSettings(prev => ({ ...prev, ...newSettings }));
   }
@@ -25,7 +34,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="app-container">
-        <Header layoutMode={layoutMode} setLayoutMode={setLayoutMode} />
+        <Header
+          layoutMode={layoutMode}
+          setLayoutMode={setLayoutMode}
+          darkMode={darkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
 
         <Routes>
           {/* Main Layout Page */}

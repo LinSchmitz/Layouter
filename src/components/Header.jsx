@@ -19,9 +19,10 @@ export default function Header({
           layoutMode={layoutMode}
           setLayoutMode={setLayoutMode}
         />
-        <Link to="/about" className="nav-link">
-          About
+        <Link to="/about" className="nav-link tooltip">
+          ?<span className="tooltip-text">About this app</span>
         </Link>
+
         <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
     </nav>

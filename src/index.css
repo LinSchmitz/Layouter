@@ -73,7 +73,7 @@ nav {
   display: flex;
   align-items: center;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   gap: var(--spacing-sm);
 }
 
@@ -193,6 +193,12 @@ footer.footer {
 
 /* Buttons (Unified Design) */
 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
   background-color: transparent;
   color: var(--color-primary);
   border-radius: var(--border-radius);
@@ -214,6 +220,69 @@ button.active {
   color: white;
   box-shadow: 1px 1px 0px 1px #075985;
   border-color: #075985;
+}
+
+/***   nav-link     ***/
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: transparent;
+  color: var(--color-primary);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-border);
+  box-shadow: 1px 1px 0px 1px #eab92d;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: var(--font-family-base);
+  text-decoration: none; /* remove underline */
+}
+
+.nav-link:hover {
+  box-shadow: 1px 1px 0px 1px #1e1e1e;
+}
+
+.nav-link.active,
+.nav-link:active {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: 1px 1px 0px 1px #075985;
+  border-color: #075985;
+}
+
+/**** tooltip-text" ****/
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%; /* above the link */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Responsive */

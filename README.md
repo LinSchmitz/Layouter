@@ -55,17 +55,6 @@ layouter/
 ```
 
 
-
----
-
-Let me know if you'd like:
-
-- Persian version
-- A badge-rich header (like build status, license, stars)
-- GitHub Pages deployment guide
-- Or a logo banner at the top
-```
-
 ````
 
 🟥 Top Bar (Header)

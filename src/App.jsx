@@ -17,6 +17,12 @@ export default function App() {
     justifyContent: 'center',
     alignItems: 'center',
     gap: 10,
+
+    flexColumns: 3, // columns per row
+    flexRows: 2, // number of rows (total boxes = columns * rows)
+
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridTemplateRows: 'repeat(2, 1fr)',
   });
 
   useEffect(() => {

@@ -4,7 +4,6 @@ export default function GridSettings({ settings, updateSettings }) {
   const [columns, setColumns] = useState(3);
   const [rows, setRows] = useState(2);
 
-  // Sync with parent settings
   useEffect(() => {
     updateSettings({
       gridTemplateColumns: `repeat(${columns}, 1fr)`,

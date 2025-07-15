@@ -49,8 +49,31 @@ export default function FlexSettings({ settings, updateSettings }) {
         <label>Gap (px):</label>
         <input
           type="number"
+          min="0"
           value={settings.gap}
           onChange={e => updateSettings({ gap: Number(e.target.value) })}
+        />
+      </div>
+
+      <div>
+        <label>Number of Columns:</label>
+        <input
+          type="number"
+          min="1"
+          value={settings.flexColumns}
+          onChange={e =>
+            updateSettings({ flexColumns: Number(e.target.value) })
+          }
+        />
+      </div>
+
+      <div>
+        <label>Number of Rows:</label>
+        <input
+          type="number"
+          min="1"
+          value={settings.flexRows}
+          onChange={e => updateSettings({ flexRows: Number(e.target.value) })}
         />
       </div>
     </div>

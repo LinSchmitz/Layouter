@@ -11,15 +11,23 @@ export default function CSSOutput({ layoutMode, settings }) {
   flex-direction: ${settings.flexDirection};
   justify-content: ${settings.justifyContent};
   align-items: ${settings.alignItems};
+  flex-wrap: wrap;
   gap: ${settings.gap}px;
-}`
+}
+.preview-area > div {
+  width: calc((100% - ${(settings.flexColumns - 1) * settings.gap}px) / ${
+          settings.flexColumns
+        });
+}
+`
       : `
 .preview-area {
   display: grid;
   grid-template-columns: ${settings.gridTemplateColumns || 'none'};
   grid-template-rows: ${settings.gridTemplateRows || 'none'};
   gap: ${settings.gap}px;
-}`;
+}
+`;
 
   function handleCopy() {
     navigator.clipboard.writeText(cssCode.trim());
@@ -34,6 +42,7 @@ export default function CSSOutput({ layoutMode, settings }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          marginBottom: '8px',
         }}
       >
         <h3>CSS Output</h3>
@@ -42,7 +51,9 @@ export default function CSSOutput({ layoutMode, settings }) {
         </button>
       </div>
 
-      <pre className="css-output">{cssCode}</pre>
+      <pre className="css-output" style={{ whiteSpace: 'pre-wrap' }}>
+        {cssCode}
+      </pre>
     </div>
   );
 }

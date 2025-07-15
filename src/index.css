@@ -110,6 +110,7 @@ nav {
 /* Main Body */
 .main-body {
   display: flex;
+  justify-content: space-between;
   gap: var(--spacing-lg);
   background: var(--color-secondary);
   box-shadow: var(--box-shadow);
@@ -119,7 +120,8 @@ nav {
 
 /* Settings Panel */
 .settings-panel {
-  flex: 1;
+  flex: 0 0 25%;
+  max-width: 25%;
   box-shadow: var(--box-shadow-inset);
   background: var(--color-secondary);
   border-radius: var(--border-radius);
@@ -131,7 +133,8 @@ nav {
 
 /* Preview Area */
 .preview-area {
-  flex: 2;
+  flex: 0 0 70%;
+  max-width: 70%;
   background: var(--color-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-inset);
@@ -141,6 +144,7 @@ nav {
   gap: var(--spacing-sm);
   justify-content: center;
   align-items: center;
+  min-height: 300px; /* optional: gives visual balance if it's empty */
 }
 
 /* Box Items */
@@ -302,7 +306,7 @@ button.active {
 .rotate-question {
   display: inline-block;
   transform-origin: center center;
-  transition: transform 0.6s cubic-bezier(0.6, 0.05, 0.28, 0.91); /* نرم‌تر */
+  transition: transform 0.6s cubic-bezier(0.6, 0.05, 0.28, 0.91);
 }
 
 .rotate-question.rotated {
@@ -318,6 +322,7 @@ button.active {
   .settings-panel,
   .preview-area {
     flex: unset;
+    max-width: 100%;
     width: 100%;
   }
 }

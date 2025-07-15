@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LayoutModeToggle from './LayoutModeToggle';
 import DarkModeToggle from './DarkModeToggle';
 
 export default function Header({
-  show,
-  setShow,
   layoutMode,
   setLayoutMode,
   darkMode,
   toggleDarkMode,
 }) {
+  const location = useLocation();
+
+  const isAboutPage = location.pathname === '/about';
+
   return (
     <nav className="nav-bar">
       <Link to="/" className="logo">
@@ -22,17 +24,14 @@ export default function Header({
           setLayoutMode={setLayoutMode}
         />
 
-        <Link
-          to="/about"
-          className="nav-link tooltip"
-          onClick={() => setShow(show => !show)}
-        >
-          <span className={`rotate-question ${show ? 'rotated' : ''}`}>?</span>
-          <span className="tooltip-text">About this app</span>
-          {/* {show ? '¿' : '?'}
-          <span className="tooltip-text">About this app</span> */}
+        <Link to={isAboutPage ? '/' : '/about'} className="nav-link tooltip">
+          <span className={`rotate-question ${isAboutPage ? 'rotated' : ''}`}>
+            ?
+          </span>
+          <span className="tooltip-text">
+            {isAboutPage ? 'Back to Layout' : 'About this app'}
+          </span>
         </Link>
-
         <DarkModeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
     </nav>

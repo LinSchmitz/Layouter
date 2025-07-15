@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './DarkModeToggle.css';
 
-export default function DarkModeToggle({ darkMode, toggleDarkMode }) {
+export default function DarkModeToggle() {
+  // Initialize darkMode state from localStorage or default to false
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved === 'true'; // localStorage stores everything as strings
+  });
+
+  // Update localStorage and body class whenever darkMode changes
+  useEffect(() => {
+    localStorage.setItem('darkMode', darkMode);
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  // Toggle dark mode state
+  function toggleDarkMode() {
+    setDarkMode(prev => !prev);
+  }
+
   return (
     <div className="dark-toggle-wrapper">
       <input

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function CSSOutput({ layoutMode, settings }) {
-  const output =
+  const [copied, setCopied] = useState(false);
+
+  const cssCode =
     layoutMode === 'flex'
       ? `
 .preview-area {
@@ -19,5 +21,28 @@ export default function CSSOutput({ layoutMode, settings }) {
   gap: ${settings.gap}px;
 }`;
 
-  return <pre className="css-output">{output}</pre>;
+  function handleCopy() {
+    navigator.clipboard.writeText(cssCode.trim());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  return (
+    <div className="css-output-container">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <h3>CSS Output</h3>
+        <button onClick={handleCopy} style={{ fontSize: '0.9rem' }}>
+          {copied ? '✔ Copied!' : '📋 Copy CSS'}
+        </button>
+      </div>
+
+      <pre className="css-output">{cssCode}</pre>
+    </div>
+  );
 }

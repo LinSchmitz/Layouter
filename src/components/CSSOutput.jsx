@@ -5,12 +5,6 @@ export default function CssOutput({ layoutMode, settings }) {
   const [copied, setCopied] = useState(false);
   const [showCss, setShowCss] = useState(true);
 
-  // const boxCount =
-  //   layoutMode === 'grid'
-  //     ? (parseInt(settings.gridTemplateColumns.match(/\d+/)?.[0]) || 1) *
-  //       (parseInt(settings.gridTemplateRows.match(/\d+/)?.[0]) || 1)
-  //     : (settings.flexColumns || 1) * (settings.flexRows || 1);
-
   const getFlexBoxCount = () => {
     const { flexColumns, flexRows, flexDirection } = settings;
     return flexDirection === 'column'

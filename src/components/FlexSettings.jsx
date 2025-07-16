@@ -37,22 +37,12 @@ export default function FlexSettings({ settings, updateSettings }) {
           value={settings.alignItems}
           onChange={e => updateSettings({ alignItems: e.target.value })}
         >
+          <option value="stretch">stretch</option>
           <option value="flex-start">flex-start</option>
           <option value="center">center</option>
           <option value="flex-end">flex-end</option>
-          <option value="stretch">stretch</option>
           <option value="baseline">baseline</option>
         </select>
-      </div>
-
-      <div>
-        <label>Gap (px):</label>
-        <input
-          type="number"
-          min="0"
-          value={settings.gap}
-          onChange={e => updateSettings({ gap: Number(e.target.value) })}
-        />
       </div>
 
       <div>
@@ -74,6 +64,16 @@ export default function FlexSettings({ settings, updateSettings }) {
           min="1"
           value={settings.flexRows}
           onChange={e => updateSettings({ flexRows: Number(e.target.value) })}
+        />
+      </div>
+
+      <div>
+        <label>Gap (px):</label>
+        <input
+          type="number"
+          min="0"
+          value={settings.gap}
+          onChange={e => updateSettings({ gap: Number(e.target.value) })}
         />
       </div>
     </div>

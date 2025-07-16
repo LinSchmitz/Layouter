@@ -35,7 +35,8 @@ function Footer() {
         </svg>
       </a>
       <p className="copyright">
-        &copy; {currentYear} <span className="footer-name">Lin Schmitz</span>
+        &copy; {currentYear}{' '}
+        <span className="footer-name">Created with ☕ & ❤️ by Lin Schmitz</span>
       </p>
     </footer>
   );

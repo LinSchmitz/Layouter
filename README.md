@@ -106,7 +106,7 @@ Feel free to fork, open issues, or submit PRs! Let's make Layouter even better t
 
 ## 📬 Contact
 
-Created with ☕ & ❤️ by \Lin Schmitz. Reach out anytime!
+Created with ☕ & ❤️ by Lin Schmitz. Reach out anytime!
 
 ---
 

@@ -72,15 +72,13 @@ ${Array.from({ length: boxCount })
   };
 
   return (
-    <div className="css-output-wrapper">
-      <button onClick={handleCopy} className="copy-btn">
-        {copied ? '✔ Copied!' : '📋 Copy'}
-      </button>
-
-      <div className="css-output-container">
+    <div className="css-output">
+      <div className="buttons-container">
         <h3>Output</h3>
-
-        <div className="buttons-container">
+        <div className="btn-group">
+          <button onClick={handleCopy} className="copy-btn">
+            {copied ? '✔ Copied!' : '📋 Copy'}
+          </button>
           <button
             onClick={() => setShowCss(true)}
             className={showCss ? 'active' : ''}
@@ -96,8 +94,9 @@ ${Array.from({ length: boxCount })
             HTML
           </button>
         </div>
-
-        <pre className="code-output">{showCss ? cssCode : htmlCode}</pre>
+      </div>
+      <div>
+        <pre>{showCss ? cssCode : htmlCode}</pre>
       </div>
     </div>
   );

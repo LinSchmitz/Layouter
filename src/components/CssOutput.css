@@ -7,39 +7,20 @@
   white-space: pre-wrap;
   max-height: 250px;
   overflow-y: auto;
-  margin-top: var(--spacing-lg);
   color: var(--color-text-primary);
-  user-select: all;
-}
-
-.css-output-container button {
-  padding: 6px 12px;
-  border-radius: 8px;
-  background-color: var(--color-primary);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.css-output-container button:hover {
-  background-color: #3730a3;
-}
-
-.copy-btn {
-  cursor: pointer;
-  background-color: #4f46e5;
-  border: none;
-  padding: 6px 12px;
-  color: white;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: background-color 0.2s ease;
+  /* user-select: all; */
 }
 
 .buttons-container {
+  display: flex;
+  justify-content: end;
+  justify-content: space-between;
   margin-bottom: 12px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
 }
 
 .buttons-container button {
@@ -58,4 +39,16 @@
 .buttons-container button:hover {
   background-color: #4f46e5;
   color: white;
+}
+
+.copy-btn {
+  cursor: pointer;
+  background-color: #4f46e5;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
 }

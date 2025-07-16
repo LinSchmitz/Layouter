@@ -116,7 +116,7 @@ nav {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 /* Settings Panel */
@@ -193,25 +193,18 @@ nav {
 
 /* Preview Area */
 .preview-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   flex: 1 1 70%;
-  max-width: 70%;
+  /* max-width: 70%; */
   background: var(--color-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-inset);
   padding: var(--spacing-md);
-  display: flex;
-  flex-wrap: wrap;
   gap: var(--spacing-sm);
-  justify-content: center;
-  align-items: center;
-  min-height: 300px; /* optional: gives visual balance if it's empty */
-}
-
-/* Output area full width below main-body */
-.output-area {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  min-height: 300px;
 }
 
 /* Box Items */

@@ -6,6 +6,7 @@ Layouter is an interactive visual playground for mastering CSS Flexbox and Grid 
   ![alt text](public/img/1.jpg)
   ![alt text](public/img/2.jpg)
   ![alt text](public/img/3.jpg)
+
 - 🌐 [Live Demo](https://layouter-sch.vercel.app/)
 
 ## 🚀 Features

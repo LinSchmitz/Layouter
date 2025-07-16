@@ -3,6 +3,7 @@
 Layouter is an interactive visual playground for mastering CSS Flexbox and Grid layouts. It allows you to visually configure layout properties like direction, alignment, gaps, rows, and columns, while instantly seeing the results and generated CSS and HTML code you can copy for your own projects.
 
 - 📷 [Screenshot]
+  ![alt text](public/img/1.jpg)
   ![alt text](public/img/2.jpg)
   ![alt text](public/img/3.jpg)
 

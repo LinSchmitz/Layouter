@@ -13,10 +13,12 @@ body.dark .main-body,
 body.dark .settings-panel,
 body.dark .preview-area,
 body.dark .css-output,
-body.dark nav {
-  background-color: #111827;
-  color: #f3f4f6;
-  box-shadow: none;
+body.dark nav,
+body.dark footer {
+  /* add inset shadow for container elements */
+  box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.7),
+    inset -8px -8px 15px rgba(99, 115, 129, 0.5);
+  background-color: #111827; /* keep your existing dark background */
 }
 
 body.dark footer {
@@ -44,13 +46,18 @@ body.dark .layout-toggle button.active {
 }
 
 body.dark .box-item {
-  background-color: #4b5563;
+  /* background-color: #4b5563;
   color: #60a5fa;
-  box-shadow: none;
+  box-shadow: none; */
+  background-color: #1e293b; /* slightly darker than #4b5563 */
+  color: #60a5fa;
+  box-shadow: inset 6px 6px 10px rgba(0, 0, 0, 0.7),
+    inset -6px -6px 10px rgba(99, 115, 129, 0.5);
 }
 
 body.dark .box-item:hover {
-  box-shadow: inset 0 0 5px #000;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.9),
+    inset -4px -4px 8px rgba(99, 115, 129, 0.7);
 }
 
 body.dark button {
@@ -123,4 +130,55 @@ body.dark button:hover {
 
 .dark-toggle-input:checked ~ .dark-toggle-icon.moon {
   opacity: 1;
+}
+
+/* Light mode styles (your existing) */
+.css-output {
+  background: var(--color-secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-md);
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+  max-height: 250px;
+  overflow-y: auto;
+  color: var(--color-text-primary);
+}
+
+/* Dark mode overrides */
+body.dark .css-output {
+  background-color: #111827; /* dark background */
+  color: #60a5fa; /* lighter text color */
+  box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.7),
+    inset -8px -8px 15px rgba(99, 115, 129, 0.5);
+}
+
+/* Buttons container */
+body.dark .buttons-container button {
+  border-color: #2563eb; /* blue border */
+  color: #60a5fa;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+body.dark .buttons-container button.active,
+body.dark .buttons-container button:hover {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+    inset -2px -2px 5px rgba(147, 197, 253, 0.7);
+}
+
+body.dark .copy-btn {
+  background-color: #2563eb;
+  color: white;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.7),
+    inset -4px -4px 8px rgba(147, 197, 253, 0.7);
+  border: none;
+}
+
+body.dark .copy-btn:hover {
+  background-color: #1e40af;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.9),
+    inset -2px -2px 5px rgba(147, 197, 253, 0.9);
 }

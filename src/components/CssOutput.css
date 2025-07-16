@@ -8,7 +8,6 @@
   max-height: 250px;
   overflow-y: auto;
   color: var(--color-text-primary);
-  /* user-select: all; */
 }
 
 .buttons-container {

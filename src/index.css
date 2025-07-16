@@ -116,7 +116,7 @@ nav {
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   padding: var(--spacing-md);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Settings Panel */
@@ -192,22 +192,20 @@ nav {
 }
 
 /* Preview Area */
+
 .preview-area {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   flex: 1 1 70%;
-  /* max-width: 70%; */
   background: var(--color-secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-inset);
   padding: var(--spacing-md);
-  gap: var(--spacing-sm);
-  min-height: 300px;
 }
 
 /* Box Items */
+
 .box-item {
   width: 80px;
   height: 80px;
@@ -222,6 +220,7 @@ nav {
   cursor: grab;
   user-select: none;
   transition: box-shadow 0.3s ease;
+  margin-bottom: 0 !important;
 }
 
 .box-item:hover {

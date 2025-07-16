@@ -9,13 +9,18 @@ export default function PreviewArea({ layoutMode, settings }) {
   const gridColumns = getCountFromRepeat(settings.gridTemplateColumns);
   const gridRows = getCountFromRepeat(settings.gridTemplateRows);
 
-  // Calculate total boxes for grid or flex mode
+  // const totalBoxes =
+  //   layoutMode === 'grid'
+  //     ? gridColumns * gridRows
+  //     : settings.flexColumns * settings.flexRows;
+
   const totalBoxes =
     layoutMode === 'grid'
       ? gridColumns * gridRows
+      : settings.flexDirection === 'column'
+      ? settings.flexRows * settings.flexColumns
       : settings.flexColumns * settings.flexRows;
 
-  // Styles for flex mode
   const flexStyles =
     layoutMode === 'flex'
       ? {
@@ -29,7 +34,6 @@ export default function PreviewArea({ layoutMode, settings }) {
         }
       : {};
 
-  // Styles for grid mode
   const gridStyles =
     layoutMode === 'grid'
       ? {
@@ -40,7 +44,6 @@ export default function PreviewArea({ layoutMode, settings }) {
         }
       : {};
 
-  // Box width for flex: calc width minus gaps
   const gap = settings.gap || 0;
   const boxWidthFlex = `calc((100% - ${(settings.flexColumns - 1) * gap}px) / ${
     settings.flexColumns

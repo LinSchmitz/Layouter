@@ -246,7 +246,7 @@ footer {
 
 .icons:hover {
   transform: rotate(360deg) scale(1.2);
-  fill: var(--blue-catchy);
+  fill: var(--color-primary);
 }
 
 .copyright {

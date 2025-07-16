@@ -13,11 +13,18 @@ body.dark .main-body,
 body.dark .settings-panel,
 body.dark .preview-area,
 body.dark .css-output,
-body.dark nav,
-body.dark footer {
+body.dark nav {
   background-color: #111827;
   color: #f3f4f6;
   box-shadow: none;
+}
+
+body.dark footer {
+  background-color: #111827;
+  color: #eab92d;
+
+  box-shadow: var(--box-shadow);
+  box-shadow: 1px 1px 1px 1px #eab92d;
 }
 
 body.dark .logo,

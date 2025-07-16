@@ -36,7 +36,9 @@ function Footer() {
       </a>
       <p className="copyright">
         &copy; {currentYear}{' '}
-        <span className="footer-name">Created with ☕ & ❤️ by Lin Schmitz</span>
+        <span className="footer-name">
+          Created with ☕,🐈 & ❤️ by Lin Schmitz
+        </span>
       </p>
     </footer>
   );
